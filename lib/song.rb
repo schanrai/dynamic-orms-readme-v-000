@@ -45,6 +45,7 @@ class Song
   def values_for_insert
     values = []
     self.class.column_names.each do |col_name|
+          binding.pry
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
     values.join(", ")
@@ -53,7 +54,6 @@ class Song
 #gives us "name,breed"
   def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
-    binding.pry
   end
 
   def self.find_by_name(name)
