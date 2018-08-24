@@ -8,7 +8,7 @@ class Song
     self.to_s.downcase.pluralize
   end
 
-#queries table for column names
+#queries table for column names (table created in environment)
   def self.column_names
     DB[:conn].results_as_hash = true
 
