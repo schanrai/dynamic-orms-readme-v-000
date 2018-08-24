@@ -51,7 +51,7 @@ class Song
     values.join(", ")
   end
 
-#gives us "name,breed"
+#gives us "name,album"
   def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
